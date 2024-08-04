@@ -85,8 +85,6 @@ ID: Id do user deve ser passador na rota ex: `http://localhost:8080/update/id`
 
 
 `{
-
-    "id": "1",
     "name" "victor" <= novo nome
     "email": "victor@teste.com" <= novo email,
     "password": "1234" <= nova senha
