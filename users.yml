@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: API
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      tags:
+      - Usuários
+      summary: Retorna todos os usuários
+      responses:
+        200:
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+
+  /register:
+    post:
+      tags:
+      - Usuários
+      summary: Rota para Cadastrar Usuário
+      requestBody:
+        description: Dados do usuário para cadastro
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Victor
+                email:
+                  type: string
+                  example: victor@teste.com
+                password:
+                  type: string
+                  example: testsenha
+                adm:
+                  type: string
+                  example: '1'
+              required:
+                - name
+                - email
+                - password
+      responses:
+        200:
+          description: Usuário cadastrado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    example: OK
+
+
+  /update/{id}:
+    put:
+      tags:
+      - Usuários
+      summary: Rota para Editar Usuário
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do Usuario
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+      requestBody:
+        description: Dados do usuário para editar
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Victor
+                email:
+                  type: string
+                  example: victor@teste.com
+                password:
+                  type: string
+                  example: testsenha
+                adm:
+                  type: string
+                  example: '1'
+              required:
+                - name
+                - email
+                - password
+      responses:
+        200:
+          description: Usuário Atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    example: OK
+
+
+
+  /delete/{id}:
+    delete:
+      tags:
+      - Usuários
+      summary: Rota para Deletar Usuário
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID do Usuario
+          schema:
+            type: string
+            pattern: '^[0-9]+$'
+      responses:
+        200:
+          description: Usuário Deletado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    example: OK

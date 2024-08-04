@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist"  // Diretório de saída para os arquivos compilados
+  },
+  "include": [
+    "src/**/*",
+    "controllers/**/*",
+    "database/**/*",
+    "interfaces/**/*",
+    "models/**/*",
+    "routes/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
