@@ -83,14 +83,16 @@ Caso essa resposta ocorra, seu E-mail ja esta cadastrado.
 
 ID: Id do user deve ser passador na rota ex: `http://localhost:8080/update/id`
 
-
+```
 {
     "name" "victor" <= novo nome
     "email": "victor@teste.com" <= novo email,
     "password": "1234" <= nova senha
     "adm:: "1" <= novo cargo
 
-}`
+}
+
+```
 
 #### Respostas
 
